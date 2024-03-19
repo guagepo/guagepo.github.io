@@ -18,3 +18,12 @@ p{
 body{
     font-family: 'Noto Serif TC',sans-serif;
 }
+
+.expedu_icon {
+    color: blue;
+}
+
+.expedu_icon:hover{
+   background-color: brown;
+    color: white;
+}
