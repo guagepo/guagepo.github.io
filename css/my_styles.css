@@ -3,7 +3,11 @@ p.redred{
     font-size: 40px;
     text-align: center;
    text-indent: 2em;
+   letter-spacing: 0.8px;
+   line-height: 1.5em;
+   border: 15px solid    rgb(70, 53, 41) ;
    background-color: antiquewhite;
+   
 }
 
 .blueblue{
@@ -26,4 +30,10 @@ body{
 .expedu_icon:hover{
    background-color: brown;
     color: white;
+}   
+
+.bg-primary{
+    background-color: rgb(92, 92, 92) !important;
+    background-image: url(../assets/img/001.jpg);
+    
 }
