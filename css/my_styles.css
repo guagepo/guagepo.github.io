@@ -45,21 +45,19 @@ table.table01{
 }
 table.table01 th{
     text-align: center;
-    background-color: darkslategrey;
     color: white;
-    border: 10px solid  rgb(88, 4, 4) ;
+    background-color: gray  ;
+    border: 5px solid  rgb(88, 4, 4) ;
 }
 table.table01 td{
     text-align: center;
-    background-color: rgb(38, 78, 32);
-    color: white;
-    border: 10px solid   rgb(88, 4, 4) ;
+    border: 5px solid   rgb(88, 4, 4) ;
 }
 
 table.table01 tr:nth-child(even) {
-    background-color: rgb(192, 201, 175);
+    background-color: rgb(72, 97, 25);
 }
 
 table.table01 tr:nth-child(odd) {
-    background-color: rgb(92, 17, 24);
-}
+    background-color: rgb(182, 10, 10);
+}   
