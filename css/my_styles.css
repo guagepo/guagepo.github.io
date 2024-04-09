@@ -37,3 +37,29 @@ body{
     background-image: url(../assets/img/001.jpg);
     
 }
+
+table.table01{
+    width: 80%;
+    color: white;
+    text-align: center;
+}
+table.table01 th{
+    text-align: center;
+    background-color: darkslategrey;
+    color: white;
+    border: 10px solid  rgb(88, 4, 4) ;
+}
+table.table01 td{
+    text-align: center;
+    background-color: rgb(38, 78, 32);
+    color: white;
+    border: 10px solid   rgb(88, 4, 4) ;
+}
+
+table.table01 tr:nth-child(even) {
+    background-color: rgb(192, 201, 175);
+}
+
+table.table01 tr:nth-child(odd) {
+    background-color: rgb(92, 17, 24);
+}
