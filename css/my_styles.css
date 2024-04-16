@@ -1,4 +1,7 @@
 p.redred{
+   padding: 20px;
+   border: 10px solid  rgb(225, 100, 11) ;
+   border-radius: 5px;
     color:darkolivegreen;
     font-size: 40px;
     text-align: center;
@@ -11,7 +14,7 @@ p.redred{
 }
 
 .blueblue{
-    color: rgb(143, 60, 158);
+    color: rgb(99, 10, 115);
 }
 
 p{
@@ -35,7 +38,6 @@ body{
 .bg-primary{
     background-color: rgb(92, 92, 92) !important;
     background-image: url(../assets/img/001.jpg);
-    
 }
 
 table.table01{
