@@ -63,3 +63,14 @@ table.table01 tr:nth-child(even) {
 table.table01 tr:nth-child(odd) {
     background-color: rgb(182, 10, 10);
 }   
+.overflowtest{
+    background-color: blanchedalmond;
+    color: grey;
+    padding:10px 20px;
+    border-radius: 15px;
+    width: 50%;
+    margin: 30px auto;
+    height: 100px;
+    overflow: scroll;
+
+}
