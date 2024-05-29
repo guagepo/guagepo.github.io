@@ -8,6 +8,10 @@
 * Facebook: https://web.facebook.com/Untree.co/
 */
 /* Base */
+body{
+  font-family: 'Noto Serif TC',sans-serif;
+}
+
 html {
   overflow-x: hidden; }
 
