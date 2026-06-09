@@ -1,0 +1,64 @@
+body{
+    font-family: Arial, sans-serif;
+    padding:30px;
+    background:#f5f5f5;
+}
+
+h1{
+    text-align:center;
+}
+
+select{
+    padding:10px;
+    font-size:16px;
+    margin:20px 0;
+}
+
+#result{
+    background:white;
+    padding:20px;
+    border-radius:10px;
+}
+
+#totalCount{
+
+font-size:48px;
+
+font-weight:bold;
+
+color:#1f4e79;
+
+}
+.country-row{
+
+margin:12px 0;
+
+}
+
+.country-name{
+
+font-weight:bold;
+
+margin-bottom:4px;
+
+}
+
+.bar{
+
+height:24px;
+
+background:#d9d9d9;
+
+border-radius:6px;
+
+overflow:hidden;
+
+}
+
+.fill{
+
+height:100%;
+
+background:#1f4e79;
+
+}
