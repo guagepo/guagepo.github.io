@@ -1,0 +1,903 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+nav{
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:100%;
+
+    padding:40px 60px;
+
+    display:flex;
+    justify-content:flex-end;
+
+    z-index:999;
+
+    background:transparent;
+}
+
+/* 左側 */
+.nav-left{
+    display:flex;
+    align-items:center;
+
+    gap:18px;
+}
+
+/* SPECI+文字 */
+.logo-text{
+    font-size:36px;
+
+    font-weight:600;
+
+    letter-spacing:-2px;
+}
+nav ul{
+    display:flex;
+
+    gap:60px;
+
+    list-style:none;
+}
+
+nav a{
+    text-decoration:none;
+
+    color:black;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    transition:0.3s;
+}
+nav a:hover{
+    opacity:0.6;
+}
+
+body{
+    font-family: "Noto Sans TC", sans-serif;
+    font-weight: 600;
+    font-size: large;
+}
+
+h1,h2,h3{
+    font-family: "Noto Serif TC", serif;
+}
+section{
+    min-height:100vh;
+    padding:80px 10%;
+}
+
+#hero{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    background:#0f172a;
+    color:black;
+    text-align:center;
+    height:100vh;
+
+    background:url("../images/hero.jpg");
+    background-size:cover;
+    background-position:center;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    position:relative;
+}
+#hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+
+    background:rgba(0,0,0,0.35);
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+
+    color:white;
+}
+
+.small-text{
+    letter-spacing:4px;
+    margin-bottom:20px;
+
+    font-size:14px;
+}
+
+.hero-content h1{
+    font-size:110px;
+    line-height:0.95;
+
+    font-family:"Noto Serif TC", serif;
+
+    margin-bottom:40px;
+}
+
+h1{
+    font-size:4rem;
+}
+
+h2{
+    margin-bottom:30px;
+}
+#hero{
+    background:url("../images/hero.jpg");
+    background-size:cover;
+    background-position:center;
+
+    color:black     ;
+    text-align:center;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+}
+#about{
+    padding:180px 10%;
+    background:#0f0f0f;
+    color:white;
+    position:relative;
+
+    min-height:100vh;
+
+    overflow:hidden;
+
+    display:flex;
+    align-items:center;
+
+    padding:0 10%;
+}
+/* 背景輪播 */
+.bg-slider{
+    position:absolute;
+    inset:0;
+
+    background-image:url("../images/bg1.jpg");
+
+    background-size:cover;
+    background-position:center;
+
+    animation:slideShow 18s infinite linear;
+}
+
+/* 黑色遮罩 */
+.overlay{
+    position:absolute;
+    inset:0;
+
+    background:rgba(0,0,0,0.65);
+}
+/* 文字 */
+.about-content{
+    position:relative;
+    z-index:2;
+
+    color:white;
+}
+@keyframes slideShow{
+
+    0%{
+        background-image:url("../images/bg1.jpg");
+        transform:scale(1);
+    }
+
+    45%{
+        background-image:url("../images/bg1.jpg");
+        transform:scale(1.05);
+    }
+
+    50%{
+        background-image:url("../images/bg2.jpg");
+        transform:scale(1);
+    }
+
+    95%{
+        background-image:url("../images/bg2.jpg");
+        transform:scale(1.05);
+    }
+
+    100%{
+        background-image:url("../images/bg1.jpg");
+        transform:scale(1.05);
+    }
+}
+.speci-title{
+    font-family: "Noto Serif TC", serif;
+    font-size: 220px;
+
+    position: sticky;
+    top: 120px;
+
+    transform-origin: left center;
+
+    transition: transform 0.1s linear;
+}
+
+.small-title{
+    letter-spacing:4px;
+    font-size:14px;
+    margin-bottom:30px;
+}
+
+#about h2{
+    font-size:72px;
+    line-height:1.3;
+
+    font-family:"Noto Serif TC", serif;
+}
+.about-grid{
+    display:grid;
+    grid-template-columns:1fr 2fr;
+
+    gap:100px;
+
+    padding:180px 10%;
+
+    background:#0f0f0f;
+    color:white;
+}
+
+.about-grid h3{
+    font-size:60px;
+
+    font-family:"Noto Serif TC", serif;
+}
+
+.about-grid p{
+    font-size:20px;
+    line-height:2;
+
+    color:#d1d1d1;
+
+    margin-bottom:40px;
+}
+.ending-text{
+    padding:250px 10%;
+
+    background:#0f0f0f;
+    color:white;
+
+    text-align:center;
+}
+
+.ending-text h2{
+    font-size:64px;
+    line-height:1.5;
+
+    font-family:"Noto Serif TC", serif;
+}
+footer{
+
+    background:#a8a8a8;
+
+    color:black;
+
+    padding:10px 8% 20px;
+}
+.footer-main-visual{
+    width:220px;
+    height:auto;
+
+    transition:.3s;
+}
+.footer-main-visual:hover{
+    opacity:.8;
+    transform:scale(1.03);
+}
+.footer-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+
+    margin-bottom:15px;
+}
+
+.footer-logo{
+
+    font-size:48px;
+
+    height:180px;
+
+    transition:.3s;
+
+    width:250px;
+}
+.footer-logo:hover{
+    opacity:.7;
+
+    transform:scale(1.05);
+}
+
+.footer-social{
+
+    display:flex;
+
+    gap:30px;
+}
+
+.footer-social a{
+
+    color:black;
+
+    font-size:36px;
+
+    transition:.3s;
+}
+
+.footer-social a:hover{
+
+    opacity:.6;
+
+    transform:translateY(-3px);
+}
+
+footer hr{
+
+    border:none;
+
+    border-top:1px solid rgba(255,255,255,.3);
+
+    margin-top:10px;
+
+    margin-bottom:20px;
+}
+
+.footer-bottom{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+}
+
+.footer-school{
+
+    display:flex;
+
+    gap:0px;
+}
+
+.footer-school img{
+
+    height:110px;
+}
+#team{
+
+    padding:200px 10%;
+
+    background:#000;
+
+    color:white;
+
+    display:grid;
+
+    grid-template-columns:1fr 2fr;
+}
+
+.team-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(220px,1fr));
+
+    gap:50px;
+}
+
+.member{
+
+    text-align:center;
+}
+
+.member img{
+
+    width:220px;
+    height:220px;
+
+    object-fit:cover;
+
+    border-radius:50%;
+
+    transition:.3s;
+}
+
+.member img:hover{
+
+    transform:scale(1.05);
+}
+
+.member h3{
+
+    margin-top:20px;
+
+    font-size:28px;
+}
+
+.member p{
+
+    color:#999;
+}
+/* ============================================ */
+/*                  Quiz                        */
+/* ============================================ */
+
+.quiz-section{
+    position:relative;
+    width:100%;
+    min-height:100vh;
+    overflow:hidden;
+    background:#101010;
+    color:#fff;
+}
+
+.quiz-screen{
+    display:none;
+    width:100%;
+    min-height:100vh;
+    padding:120px 8%;
+}
+
+.quiz-screen.active{
+    display:flex;
+    animation:quizScreenIn .7s ease both;
+}
+
+@keyframes quizScreenIn{
+    from{
+        opacity:0;
+        transform:translateY(25px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* 開場畫面 */
+
+#quiz-intro{
+    align-items:center;
+}
+
+.quiz-intro-content{
+    width:100%;
+    max-width:1250px;
+    margin:0 auto;
+}
+
+.quiz-eyebrow{
+    margin:0 0 30px;
+    font-size:14px;
+    font-weight:700;
+    letter-spacing:5px;
+    text-transform:uppercase;
+}
+
+.quiz-intro-content h2{
+    max-width:1050px;
+    margin:0 0 40px;
+
+    font-family:"Noto Serif TC", serif;
+    font-size:clamp(54px, 8vw, 130px);
+    font-weight:500;
+    line-height:1.16;
+    letter-spacing:-4px;
+}
+
+.quiz-intro-text{
+    max-width:620px;
+    margin:0 0 50px;
+
+    color:#aaa;
+    font-size:18px;
+    line-height:1.8;
+}
+
+/* 主要按鈕 */
+
+.quiz-main-button{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:28px;
+
+    min-width:210px;
+    padding:17px 26px;
+
+    border:1px solid #fff;
+    border-radius:999px;
+
+    background:#fff;
+    color:#111;
+
+    font-family:"Noto Sans TC", sans-serif;
+    font-size:16px;
+    font-weight:600;
+    text-decoration:none;
+
+    cursor:pointer;
+    transition:
+        transform .3s ease,
+        background .3s ease,
+        color .3s ease;
+}
+
+.quiz-main-button span{
+    font-size:20px;
+}
+
+.quiz-main-button:hover{
+    transform:translateY(-4px);
+    background:transparent;
+    color:#fff;
+}
+
+/* 題目畫面 */
+
+#quiz-question-screen{
+    align-items:center;
+}
+
+.quiz-question-wrapper{
+    width:100%;
+    max-width:1250px;
+    margin:0 auto;
+}
+
+.quiz-progress-area{
+    margin-bottom:75px;
+}
+
+#question-number{
+    margin:0 0 18px;
+    color:#a7a7a7;
+    font-size:13px;
+    font-weight:600;
+    letter-spacing:4px;
+}
+
+.quiz-progress-track{
+    width:100%;
+    height:2px;
+    overflow:hidden;
+    background:rgba(255,255,255,.18);
+}
+
+#quiz-progress-bar{
+    width:20%;
+    height:100%;
+    background:#fff;
+    transition:width .5s ease;
+}
+
+.question-content{
+    animation:questionIn .55s ease both;
+}
+
+@keyframes questionIn{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+#question-text{
+    max-width:1000px;
+    margin:0 0 60px;
+
+    font-family:"Noto Serif TC", serif;
+    font-size:clamp(42px, 6vw, 88px);
+    font-weight:500;
+    line-height:1.3;
+    letter-spacing:-2px;
+}
+
+.answer-list{
+    display:grid;
+    grid-template-columns:repeat(2, minmax(0, 1fr));
+    gap:16px;
+}
+
+.answer-button{
+    position:relative;
+    min-height:105px;
+    padding:25px 30px;
+
+    border:1px solid rgba(255,255,255,.3);
+    border-radius:18px;
+
+    background:transparent;
+    color:#fff;
+
+    font-family:"Noto Sans TC", sans-serif;
+    font-size:18px;
+    font-weight:500;
+    text-align:left;
+
+    cursor:pointer;
+    overflow:hidden;
+
+    transition:
+        color .3s ease,
+        background .3s ease,
+        border-color .3s ease,
+        transform .3s ease;
+}
+
+.answer-button::after{
+    content:"↗";
+    position:absolute;
+    right:26px;
+    top:50%;
+
+    font-size:20px;
+    transform:translateY(-50%);
+    transition:transform .3s ease;
+}
+
+.answer-button:hover{
+    background:#fff;
+    border-color:#fff;
+    color:#111;
+    transform:translateY(-4px);
+}
+
+.answer-button:hover::after{
+    transform:translate(4px, calc(-50% - 4px));
+}
+
+/* 分析畫面 */
+
+#quiz-loading{
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+}
+
+.quiz-loading-content p{
+    margin:0 0 25px;
+    color:#aaa;
+    font-size:13px;
+    letter-spacing:5px;
+}
+
+.quiz-loading-content h2{
+    margin:0;
+
+    font-family:"Noto Serif TC", serif;
+    font-size:clamp(58px, 10vw, 150px);
+    font-weight:500;
+    line-height:1.15;
+}
+
+.loading-dots{
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    margin-top:45px;
+}
+
+.loading-dots span{
+    width:12px;
+    height:12px;
+    border-radius:50%;
+    background:#fff;
+    animation:loadingDot 1.1s infinite alternate;
+}
+
+.loading-dots span:nth-child(2){
+    animation-delay:.2s;
+}
+
+.loading-dots span:nth-child(3){
+    animation-delay:.4s;
+}
+
+@keyframes loadingDot{
+    from{
+        opacity:.2;
+        transform:translateY(0);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(-12px);
+    }
+}
+
+/* 結果畫面 */
+
+#quiz-result{
+    padding-top:130px;
+    padding-bottom:130px;
+}
+
+.result-wrapper{
+    width:100%;
+    max-width:1100px;
+    margin:0 auto;
+}
+
+.result-heading{
+    margin-bottom:55px;
+}
+
+.result-heading p{
+    margin:0 0 16px;
+    color:#aaa;
+    font-size:13px;
+    letter-spacing:5px;
+}
+
+.result-heading h2{
+    display:inline-block;
+    margin:0 24px 0 0;
+
+    font-family:"Noto Serif TC", serif;
+    font-size:clamp(60px, 10vw, 140px);
+    font-weight:500;
+    line-height:1;
+}
+
+.result-heading span{
+    font-size:clamp(20px, 3vw, 42px);
+    letter-spacing:4px;
+}
+
+.result-card{
+    width:min(100%, 900px);
+    margin:0 auto;
+}
+
+.result-card img{
+    display:block;
+    width:100%;
+    height:auto;
+
+    border-radius:26px;
+
+    box-shadow:
+        0 35px 90px rgba(0,0,0,.45);
+
+    animation:resultCardIn .8s .15s ease both;
+}
+
+@keyframes resultCardIn{
+    from{
+        opacity:0;
+        transform:scale(.95) translateY(30px);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1) translateY(0);
+    }
+}
+
+.result-summary{
+    max-width:780px;
+    margin:55px auto 0;
+
+    color:#ccc;
+    font-size:20px;
+    line-height:1.9;
+}
+
+.result-actions{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:15px;
+    margin-top:45px;
+}
+
+.quiz-secondary-button{
+    min-width:170px;
+    padding:17px 26px;
+
+    border:1px solid rgba(255,255,255,.6);
+    border-radius:999px;
+
+    background:transparent;
+    color:#fff;
+
+    font-family:"Noto Sans TC", sans-serif;
+    font-size:16px;
+    font-weight:600;
+
+    cursor:pointer;
+    transition:.3s ease;
+}
+
+.quiz-secondary-button:hover{
+    background:#fff;
+    color:#111;
+    transform:translateY(-4px);
+}
+
+/* RWD */
+
+@media(max-width:768px){
+
+    .quiz-screen{
+        padding:95px 6%;
+    }
+
+    .quiz-intro-content h2{
+        font-size:clamp(48px, 15vw, 78px);
+        letter-spacing:-2px;
+    }
+
+    .quiz-progress-area{
+        margin-bottom:55px;
+    }
+
+    #question-text{
+        margin-bottom:40px;
+        font-size:clamp(38px, 11vw, 62px);
+    }
+
+    .answer-list{
+        grid-template-columns:1fr;
+    }
+
+    .answer-button{
+        min-height:85px;
+        padding:20px 58px 20px 22px;
+        font-size:16px;
+    }
+
+    .result-heading{
+        text-align:center;
+    }
+
+    .result-heading h2{
+        display:block;
+        margin:0 0 15px;
+    }
+
+    .result-heading span{
+        display:block;
+    }
+
+    .result-card img{
+        border-radius:18px;
+    }
+
+    .result-summary{
+        margin-top:35px;
+        font-size:17px;
+    }
+
+    .result-actions{
+        flex-direction:column;
+        align-items:stretch;
+    }
+
+    .quiz-main-button,
+    .quiz-secondary-button{
+        width:100%;
+    }
+}
