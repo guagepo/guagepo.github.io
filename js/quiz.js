@@ -1,6 +1,6 @@
 "use strict";
 
-const quizQuestions = [
+const questions = [
     {
         question: "當你走進一個陌生展場，最先吸引你的是什麼？",
         answers: [
@@ -108,7 +108,7 @@ const quizQuestions = [
     }
 ];
 
-const quizResults = {
+const results = {
     observer: {
         name: "觀察者",
         english: "OBSERVER",
@@ -142,30 +142,73 @@ const quizResults = {
     }
 };
 
+/* ============================================
+   題目背景顏色
+============================================ */
+
+const questionThemes = [
+    "theme-dark",
+    "theme-blue",
+    "theme-orange",
+    "theme-blue",
+    "theme-dark"
+];
+
+/* ============================================
+   抓取 HTML 元素
+============================================ */
+
 const screens = {
-    intro: document.querySelector("#quiz-intro"),
-    question: document.querySelector("#quiz-question-screen"),
-    loading: document.querySelector("#quiz-loading"),
-    result: document.querySelector("#quiz-result")
+    intro: document.querySelector("#intro-screen"),
+    question: document.querySelector("#question-screen"),
+    loading: document.querySelector("#loading-screen"),
+    result: document.querySelector("#result-screen")
 };
 
+const startButton = document.querySelector("#start-button");
+const exitButton = document.querySelector("#exit-button");
 
-const startButton = document.querySelector("#start-quiz");
-const restartButton = document.querySelector("#restart-quiz");
+const restartButton = document.querySelector("#restart-button");
+const restartTopButton =
+    document.querySelector("#restart-top-button");
 
-const questionNumber = document.querySelector("#question-number");
-const questionText = document.querySelector("#question-text");
-const answerList = document.querySelector("#answer-list");
-const questionContent = document.querySelector("#question-content");
-const progressBar = document.querySelector("#quiz-progress-bar");
+const questionNumber =
+    document.querySelector("#question-number");
 
-const resultName = document.querySelector("#result-name");
-const resultEnglish = document.querySelector("#result-english");
-const resultImage = document.querySelector("#result-image");
-const resultSummary = document.querySelector("#result-summary");
+const questionText =
+    document.querySelector("#question-text");
+
+const answerList =
+    document.querySelector("#answer-list");
+
+const questionContent =
+    document.querySelector("#question-content");
+
+const progressBar =
+    document.querySelector("#progress-bar");
+
+const resultName =
+    document.querySelector("#result-name");
+
+const resultEnglish =
+    document.querySelector("#result-english");
+
+const resultImage =
+    document.querySelector("#result-image");
+
+const resultSummary =
+    document.querySelector("#result-summary");
+
+
+/* ============================================
+   測驗狀態
+============================================ */
 
 let currentQuestionIndex = 0;
+
 let answerHistory = [];
+
+let isTransitioning = false;
 
 const scores = {
     observer: 0,
@@ -174,6 +217,11 @@ const scores = {
     thinker: 0
 };
 
+
+/* ============================================
+   切換畫面
+============================================ */
+
 function changeScreen(screenName) {
     Object.values(screens).forEach((screen) => {
         screen.classList.remove("active");
@@ -181,43 +229,59 @@ function changeScreen(screenName) {
 
     screens[screenName].classList.add("active");
 
-    screens[screenName].scrollIntoView({
-        behavior: "smooth",
-        block: "start"
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
     });
 }
 
-function resetScores() {
-    Object.keys(scores).forEach((type) => {
-        scores[type] = 0;
-    });
-}
+
+/* ============================================
+   重設測驗
+============================================ */
 
 function resetQuiz() {
     currentQuestionIndex = 0;
     answerHistory = [];
+    isTransitioning = false;
 
-    resetScores();
+    Object.keys(scores).forEach((type) => {
+        scores[type] = 0;
+    });
 
     resultImage.src = "";
-    resultImage.alt = "Speci+ 測驗結果分析圖";
-
-    showQuestion();
 }
 
+
+/* ============================================
+   顯示題目
+============================================ */
+
 function showQuestion() {
-    const currentQuestion = quizQuestions[currentQuestionIndex];
+    const currentQuestion =
+        questions[currentQuestionIndex];
+
+    const totalQuestions = questions.length;
 
     questionNumber.textContent =
         `QUESTION ${String(currentQuestionIndex + 1).padStart(2, "0")} / ` +
-        `${String(quizQuestions.length).padStart(2, "0")}`;
+        `${String(totalQuestions).padStart(2, "0")}`;
 
-    questionText.textContent = currentQuestion.question;
+    questionText.textContent =
+        currentQuestion.question;
 
-    const progress =
-        ((currentQuestionIndex + 1) / quizQuestions.length) * 100;
+    progressBar.style.width =
+        `${((currentQuestionIndex + 1) / totalQuestions) * 100}%`;
 
-    progressBar.style.width = `${progress}%`;
+    screens.question.classList.remove(
+            "theme-dark",
+            "theme-blue",
+            "theme-orange"
+        );
+        
+    screens.question.classList.add(
+            questionThemes[currentQuestionIndex]
+        );
 
     answerList.innerHTML = "";
 
@@ -235,6 +299,8 @@ function showQuestion() {
         answerList.appendChild(button);
     });
 
+    questionContent.classList.remove("leaving");
+
     questionContent.style.animation = "none";
 
     requestAnimationFrame(() => {
@@ -242,83 +308,154 @@ function showQuestion() {
     });
 }
 
+
+/* ============================================
+   選擇答案
+============================================ */
+
 function selectAnswer(type) {
-    if (!Object.prototype.hasOwnProperty.call(scores, type)) {
-        console.error("未知的結果類型：", type);
+    if (isTransitioning) {
         return;
     }
+
+    if (!Object.prototype.hasOwnProperty.call(scores, type)) {
+        console.error("未知的測驗類型：", type);
+        return;
+    }
+
+    isTransitioning = true;
 
     scores[type] += 1;
     answerHistory.push(type);
 
-    currentQuestionIndex += 1;
+    questionContent.classList.add("leaving");
 
-    if (currentQuestionIndex < quizQuestions.length) {
-        showQuestion();
-        return;
-    }
+    window.setTimeout(() => {
+        currentQuestionIndex += 1;
 
-    showLoading();
+        if (currentQuestionIndex < questions.length) {
+            showQuestion();
+            isTransitioning = false;
+            return;
+        }
+
+        showLoading();
+    }, 320);
 }
 
-function getFinalType() {
-    const highestScore = Math.max(...Object.values(scores));
 
-    const tiedTypes = Object.keys(scores).filter((type) => {
-        return scores[type] === highestScore;
-    });
+/* ============================================
+   處理平手
+============================================ */
+
+function calculateFinalType() {
+    const highestScore =
+        Math.max(...Object.values(scores));
+
+    const tiedTypes =
+        Object.keys(scores).filter((type) => {
+            return scores[type] === highestScore;
+        });
 
     if (tiedTypes.length === 1) {
         return tiedTypes[0];
     }
 
     /*
-     * 平手時以觀眾最後一次選到的平手類型為結果，
-     * 避免每次都固定顯示同一個類型。
+     * 平手時，以最後一次選到的平手類型為結果。
      */
-    const reversedAnswers = [...answerHistory].reverse();
+    const reversedHistory =
+        [...answerHistory].reverse();
 
-    return (
-        reversedAnswers.find((type) => tiedTypes.includes(type)) ??
-        tiedTypes[0]
-    );
+    const recentTiedType =
+        reversedHistory.find((type) => {
+            return tiedTypes.includes(type);
+        });
+
+    return recentTiedType ?? tiedTypes[0];
 }
+
+
+/* ============================================
+   Loading
+============================================ */
 
 function showLoading() {
     changeScreen("loading");
 
     window.setTimeout(() => {
         showResult();
-    }, 2000);
+    }, 2200);
 }
 
+
+/* ============================================
+   顯示結果
+============================================ */
+
 function showResult() {
-    const finalType = getFinalType();
-    const result = quizResults[finalType];
+    const finalType = calculateFinalType();
+    const finalResult = results[finalType];
 
-    resultName.textContent = result.name;
-    resultEnglish.textContent = result.english;
-    resultSummary.textContent = result.summary;
+    resultName.textContent =
+        finalResult.name;
 
-    resultImage.src = result.image;
-    resultImage.alt = `${result.name} ${result.english} 測驗結果分析圖`;
+    resultEnglish.textContent =
+        finalResult.english;
+
+    resultSummary.textContent =
+        finalResult.summary;
+
+    resultImage.src =
+        finalResult.image;
+
+    resultImage.alt =
+        `${finalResult.name} ${finalResult.english} 分析結果`;
 
     resultImage.onerror = () => {
-        console.error(`無法載入結果圖片：${result.image}`);
+        console.error(
+            `找不到圖片：${finalResult.image}`
+        );
 
         resultImage.alt =
-            `找不到 ${result.name} 結果圖片，請檢查圖片路徑。`;
+            `無法載入${finalResult.name}結果圖片，請檢查圖片路徑。`;
     };
 
     changeScreen("result");
 }
 
-startButton.addEventListener("click", () => {
-    resetQuiz();
-    changeScreen("question");
-});
 
-restartButton.addEventListener("click", () => {
+/* ============================================
+   開始與重新測驗
+============================================ */
+
+function startQuiz() {
     resetQuiz();
+    showQuestion();
     changeScreen("question");
-});
+}
+
+if (startButton) {
+    startButton.addEventListener("click", startQuiz);
+} else {
+    console.error("找不到 #start-button");
+}
+
+if (restartButton) {
+    restartButton.addEventListener("click", startQuiz);
+}
+
+if (restartTopButton) {
+    restartTopButton.addEventListener("click", startQuiz);
+}
+
+if (exitButton) {
+    exitButton.addEventListener("click", () => {
+        const shouldExit =
+            window.confirm("確定要離開測驗並回到展覽首頁嗎？");
+
+        if (shouldExit) {
+            window.location.href = "index.html";
+        }
+    });
+}
