@@ -19,7 +19,7 @@ nav{
     z-index:999;
 
     background:transparent;
-}
+}   
 
 /* 左側 */
 .nav-left{
@@ -473,7 +473,19 @@ footer hr{
 /* 開場畫面 */
 
 #quiz-intro{
+    position:relative;
+
+    display:flex;
     align-items:center;
+
+    width:100%;
+    min-height:100svh;
+
+    padding:100px 8% 70px;
+
+    overflow:hidden;
+    background:#101010;
+    color:#fff;
 }
 
 .quiz-intro-content{
@@ -488,6 +500,7 @@ footer hr{
     font-weight:700;
     letter-spacing:5px;
     text-transform:uppercase;
+    color:#fff;
 }
 
 .quiz-intro-content h2{
@@ -900,4 +913,775 @@ footer hr{
     .quiz-secondary-button{
         width:100%;
     }
+}
+/* ============================================
+   Story 基本設定
+============================================ */
+
+.story{
+    width:100%;
+    overflow:hidden;
+    background:#0d0d0d;
+    color:#fff;
+}
+
+.story-section{
+    position:relative;
+    min-height:100vh;
+    padding:150px 8%;
+
+    border-top:1px solid rgba(255,255,255,.12);
+}
+
+.story-heading{
+    display:grid;
+    grid-template-columns:120px 1fr;
+    align-items:start;
+    gap:35px;
+
+    margin-bottom:110px;
+}
+
+.story-number{
+    font-family:"Noto Serif TC", serif;
+    font-size:clamp(65px, 8vw, 125px);
+    font-weight:400;
+    line-height:.85;
+}
+
+.story-label{
+    margin-bottom:12px;
+
+    color:#888;
+
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:4px;
+}
+
+.story-heading h2{
+    margin:0;
+
+    font-family:"Noto Sans TC", sans-serif;
+    font-size:clamp(28px, 3vw, 46px);
+}
+
+.story-main-title{
+    position:relative;
+    z-index:2;
+
+    max-width:1200px;
+    margin-bottom:110px;
+}
+
+.story-main-title h3{
+    margin:0;
+
+    font-family:"Noto Serif TC", serif;
+    font-size:clamp(52px, 7vw, 110px);
+    font-weight:500;
+    line-height:1.25;
+    letter-spacing:-4px;
+}
+
+.story-main-title-center{
+    margin-right:auto;
+    margin-left:auto;
+    text-align:center;
+}
+
+.story-body{
+    position:relative;
+    z-index:2;
+
+    max-width:760px;
+}
+
+.story-body-right{
+    margin-left:auto;
+}
+
+.story-body-center{
+    margin-right:auto;
+    margin-left:auto;
+}
+
+.story-body p{
+    margin-bottom:32px;
+
+    color:#c7c7c7;
+
+    font-size:clamp(17px, 1.5vw, 21px);
+    line-height:2;
+}
+
+.story-quote{
+    position:relative;
+    z-index:2;
+
+    max-width:1100px;
+    margin:150px auto 0;
+
+    border:0;
+
+    font-family:"Noto Serif TC", serif;
+    font-size:clamp(50px, 5.8vw, 92px);
+    font-style:normal;
+    line-height:1.45;
+    text-align:center;
+}
+
+
+/* ============================================
+   01 資訊洪流
+============================================ */
+
+.story-information{
+    overflow:hidden;
+    background:#101010;
+}
+
+.information-words{
+    position:absolute;
+    inset:0;
+
+    overflow:hidden;
+    pointer-events:none;
+}
+
+.information-words span{
+    position:absolute;
+
+    color:rgba(255,255,255,.035);
+
+    font-size:clamp(70px, 11vw, 190px);
+    font-weight:900;
+    letter-spacing:-5px;
+
+    animation:informationFloat 12s ease-in-out infinite alternate;
+}
+
+.information-words span:nth-child(1){
+    top:10%;
+    right:-3%;
+}
+
+.information-words span:nth-child(2){
+    top:30%;
+    left:-4%;
+}
+
+.information-words span:nth-child(3){
+    top:55%;
+    right:5%;
+}
+
+.information-words span:nth-child(4){
+    bottom:3%;
+    left:4%;
+}
+
+.information-words span:nth-child(5){
+    top:18%;
+    left:38%;
+}
+
+.information-words span:nth-child(6){
+    bottom:22%;
+    right:25%;
+}
+
+.information-words span:nth-child(7){
+    top:42%;
+    left:22%;
+}
+
+.information-words span:nth-child(8){
+    bottom:0;
+    right:-4%;
+}
+
+@keyframes informationFloat{
+    from{
+        transform:translate3d(-15px, 15px, 0);
+    }
+
+    to{
+        transform:translate3d(20px, -20px, 0);
+    }
+}
+
+
+/* ============================================
+   02 AI 大量生成
+============================================ */
+
+.story-ai{
+    overflow:hidden;
+
+    background:
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(247,148,29,.15),
+            transparent 27%
+        ),
+        radial-gradient(
+            circle at 5% 85%,
+            rgba(36,88,155,.25),
+            transparent 32%
+        ),
+        #0d0d0d;
+}
+
+.ai-generation-wall{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:15px;
+
+    max-width:1300px;
+    margin:0 auto 130px;
+
+    opacity:.35;
+}
+
+.ai-generation-wall span{
+    padding:13px 22px;
+
+    border:1px solid rgba(255,255,255,.28);
+    border-radius:999px;
+
+    font-size:clamp(14px, 2vw, 24px);
+    letter-spacing:2px;
+
+    animation:aiWordPulse 2.8s ease-in-out infinite alternate;
+}
+
+.ai-generation-wall span:nth-child(2n){
+    animation-delay:.4s;
+}
+
+.ai-generation-wall span:nth-child(3n){
+    animation-delay:.8s;
+}
+
+@keyframes aiWordPulse{
+    from{
+        opacity:.25;
+        transform:scale(.95);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1.05);
+    }
+}
+
+.ai-answer{
+    margin:120px 0;
+
+    text-align:center;
+}
+
+.ai-answer p{
+    margin:8px 0;
+
+    color:#888;
+
+    font-size:clamp(30px, 4vw, 62px);
+}
+
+.ai-answer .ai-answer-highlight{
+    color:#fff;
+
+    font-family:"Noto Serif TC", serif;
+}
+
+
+/* ============================================
+   03 Speci+
+============================================ */
+
+.story-speci{
+    background:#f1f1ed;
+    color:#101010;
+}
+
+.story-speci .story-label{
+    color:#666;
+}
+
+.speci-layout{
+    display:grid;
+    grid-template-columns:.9fr 1.4fr;
+    gap:90px;
+}
+
+.speci-sticky{
+    align-self:start;
+    position:sticky;
+    top:80px;
+}
+
+.speci-sticky h3{
+    margin:0;
+
+    font-family:"Noto Serif TC", serif;
+    font-size:clamp(105px, 15vw, 250px);
+    font-weight:500;
+    line-height:.85;
+    letter-spacing:-10px;
+}
+
+.speci-definitions{
+    display:grid;
+    gap:35px;
+}
+
+.definition-card{
+    min-height:390px;
+    padding:50px;
+
+    border:1px solid rgba(0,0,0,.2);
+    border-radius:32px;
+
+    background:#fff;
+
+    transition:
+        transform .35s ease,
+        background .35s ease,
+        color .35s ease;
+}
+
+.definition-card:hover{
+    background:#24589b;
+    color:#fff;
+    transform:translateY(-8px);
+}
+
+.definition-card:nth-child(2):hover{
+    background:#f7941d;
+    color:#101010;
+}
+
+.definition-card-plus:hover{
+    background:#101010;
+    color:#fff;
+}
+
+.definition-letter{
+    margin-bottom:45px;
+
+    font-size:13px;
+    font-weight:700;
+    letter-spacing:4px;
+}
+
+.definition-card h4{
+    margin:0 0 30px;
+
+    font-family:"Noto Serif TC", serif;
+    font-size:clamp(65px, 8vw, 115px);
+    line-height:1;
+}
+
+.definition-card p:last-child{
+    max-width:550px;
+
+    font-size:19px;
+    line-height:1.9;
+}
+
+.story-speci .story-quote{
+    color:#101010;
+}
+
+
+/* ============================================
+   04 六個核心概念
+============================================ */
+
+.story-concepts{
+    background:#111;
+}
+
+.concept-grid{
+    display:grid;
+    grid-template-columns:repeat(3, minmax(0, 1fr));
+    gap:18px;
+}
+
+.concept-card{
+    position:relative;
+
+    min-height:430px;
+    padding:35px;
+
+    overflow:hidden;
+
+    border:1px solid rgba(255,255,255,.22);
+    border-radius:25px;
+
+    background:#151515;
+
+    transition:
+        background .35s ease,
+        color .35s ease,
+        transform .35s ease;
+}
+
+.concept-card:hover{
+    background:#24589b;
+    transform:translateY(-8px);
+}
+
+.concept-card:nth-child(even):hover{
+    background:#f7941d;
+    color:#101010;
+}
+
+.concept-card-plus:hover{
+    background:#f1f1ed;
+    color:#101010;
+}
+
+.concept-letter{
+    margin-bottom:80px;
+
+    font-family:"Noto Serif TC", serif;
+    font-size:clamp(90px, 9vw, 150px);
+    line-height:.8;
+}
+
+.concept-card h3{
+    margin-bottom:10px;
+
+    font-family:"Noto Sans TC", sans-serif;
+    font-size:21px;
+}
+
+.concept-card h4{
+    margin-bottom:25px;
+
+    font-family:"Noto Serif TC", serif;
+    font-size:35px;
+}
+
+.concept-card > p:last-child{
+    color:#aaa;
+
+    font-size:16px;
+    line-height:1.8;
+}
+
+.concept-card:hover > p:last-child{
+    color:inherit;
+}
+
+
+/* ============================================
+   05 人擇空間
+============================================ */
+
+.story-space{
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(36,88,155,.22),
+            transparent 38%
+        ),
+        #080808;
+}
+
+.project-orbit{
+    position:relative;
+
+    width:min(760px, 80vw);
+    aspect-ratio:1 / 1;
+
+    margin:130px auto;
+
+    border:1px solid rgba(255,255,255,.15);
+    border-radius:50%;
+}
+
+.project-orbit::before,
+.project-orbit::after{
+    content:"";
+
+    position:absolute;
+    top:50%;
+    left:50%;
+
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:50%;
+
+    transform:translate(-50%, -50%);
+}
+
+.project-orbit::before{
+    width:72%;
+    height:72%;
+}
+
+.project-orbit::after{
+    width:40%;
+    height:40%;
+}
+
+.orbit-center{
+    position:absolute;
+    top:50%;
+    left:50%;
+    z-index:3;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+
+    width:220px;
+    height:220px;
+
+    border-radius:50%;
+
+    background:#f7941d;
+    color:#101010;
+
+    transform:translate(-50%, -50%);
+}
+
+.orbit-center span{
+    font-family:"Noto Serif TC", serif;
+    font-size:48px;
+}
+
+.orbit-center small{
+    margin-top:5px;
+    letter-spacing:4px;
+}
+
+.project-dot{
+    position:absolute;
+    z-index:2;
+
+    display:grid;
+    place-items:center;
+
+    width:54px;
+    height:54px;
+
+    border:1px solid rgba(255,255,255,.55);
+    border-radius:50%;
+
+    background:#111;
+
+    font-size:13px;
+
+    animation:dotFloat 3s ease-in-out infinite alternate;
+}
+
+.dot-1{ top:2%; left:45%; }
+.dot-2{ top:10%; right:16%; }
+.dot-3{ top:27%; right:1%; }
+.dot-4{ top:52%; right:-2%; }
+.dot-5{ bottom:16%; right:11%; }
+.dot-6{ bottom:1%; right:33%; }
+.dot-7{ bottom:1%; left:33%; }
+.dot-8{ bottom:15%; left:10%; }
+.dot-9{ top:53%; left:-2%; }
+.dot-10{ top:28%; left:1%; }
+.dot-11{ top:10%; left:16%; }
+.dot-12{ top:24%; left:32%; }
+.dot-13{ bottom:23%; right:33%; }
+
+.project-dot:nth-of-type(2n){
+    background:#24589b;
+}
+
+.project-dot:nth-of-type(3n){
+    background:#f7941d;
+    color:#101010;
+}
+
+@keyframes dotFloat{
+    from{
+        transform:translateY(-6px);
+    }
+
+    to{
+        transform:translateY(7px);
+    }
+}
+
+.story-final-quote strong{
+    color:#f7941d;
+    font-weight:500;
+}
+
+.story-next-button{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    width:min(100%, 380px);
+    margin:100px auto 0;
+    padding:20px 30px;
+
+    border:1px solid #fff;
+    border-radius:999px;
+
+    background:#fff;
+    color:#101010;
+
+    font-size:17px;
+    font-weight:700;
+
+    transition:
+        transform .3s ease,
+        background .3s ease,
+        color .3s ease;
+}
+
+.story-next-button:hover{
+    background:#f7941d;
+    transform:translateY(-5px);
+}
+
+
+/* ============================================
+   滾動淡入
+============================================ */
+
+.reveal{
+    opacity:0;
+    transform:translateY(55px);
+
+    transition:
+        opacity .85s ease,
+        transform .85s ease;
+}
+
+.reveal.visible{
+    opacity:1;
+    transform:translateY(0);
+}
+
+
+/* ============================================
+   Story RWD
+============================================ */
+
+@media(max-width:900px){
+
+    .story-section{
+        padding:120px 7%;
+    }
+
+    .story-heading{
+        grid-template-columns:90px 1fr;
+        margin-bottom:80px;
+    }
+
+    .speci-layout{
+        grid-template-columns:1fr;
+    }
+
+    .speci-sticky{
+        position:relative;
+        top:auto;
+    }
+
+    .concept-grid{
+        grid-template-columns:repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+@media(max-width:600px){
+
+    .story-section{
+        padding:100px 6%;
+    }
+
+    .story-heading{
+        grid-template-columns:1fr;
+        gap:20px;
+        margin-bottom:65px;
+    }
+
+    .story-number{
+        font-size:70px;
+    }
+
+    .story-main-title{
+        margin-bottom:70px;
+    }
+
+    .story-main-title h3{
+        font-size:clamp(44px, 12vw, 65px);
+        letter-spacing:-2px;
+    }
+
+    .story-body p{
+        font-size:16px;
+    }
+
+    .story-quote{
+        margin-top:100px;
+        font-size:clamp(37px, 10vw, 55px);
+    }
+
+    .information-words span{
+        font-size:75px;
+    }
+
+    .ai-generation-wall{
+        margin-bottom:85px;
+    }
+
+    .definition-card{
+        min-height:auto;
+        padding:35px 25px;
+    }
+
+    .speci-sticky h3{
+        font-size:100px;
+        letter-spacing:-5px;
+    }
+
+    .concept-grid{
+        grid-template-columns:1fr;
+    }
+
+    .concept-card{
+        min-height:370px;
+    }
+
+    .project-orbit{
+        width:88vw;
+        margin:90px auto;
+    }
+
+    .orbit-center{
+        width:145px;
+        height:145px;
+    }
+
+    .orbit-center span{
+        font-size:32px;
+    }
+
+    .orbit-center small{
+        font-size:10px;
+    }
+
+    .project-dot{
+        width:39px;
+        height:39px;
+
+        font-size:10px;
+    }
+
 }
