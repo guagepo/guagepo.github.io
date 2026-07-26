@@ -1,297 +1,744 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
-<head>
-    <!-- Start of headStart -->
-    <meta charset="UTF-8">
-    <meta name="keywords" content="世新, 資傳, 畢展">
-     <!-- End of headStart -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SPECI+ 人擇空間 世新大學112級資訊傳播學系</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200..900&display=swap" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&family=Noto+Serif+TC:wght@200..900&display=swap" rel="stylesheet">
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-<link rel="icon" type="image/png" href="images/logo2.jpg">
+    <head>
+        <meta charset="UTF-8">
+    
+        <meta
+            name="keywords"
+            content="世新, 資傳, 畢展"
+        >
+    
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+        >
+    
+        <title>
+            SPECI+ 人擇空間｜世新大學112級資訊傳播學系
+        </title>
+    
+        <link rel="stylesheet" href="css/style.css">
+    
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+    
+        <link
+            rel="preconnect"
+            href="https://fonts.gstatic.com"
+            crossorigin
+        >
+    
+        <link
+            href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&family=Noto+Serif+TC:wght@200..900&display=swap"
+            rel="stylesheet"
+        >
+    
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        >
+    
+        <link
+            rel="icon"
+            type="image/png"
+            href="images/logo2.jpg"
+        >
+    </head>
+    <body>
+        <nav class="site-nav">
 
-</head>
-<body>
-    <nav>
-        <ul>
-            <li><a href="#about">故事</a></li>
-            <li><a href="#result">成果展示</a></li>
-            <li><a href="#team">團隊</a></li>
-        </ul>
-    </nav>
-    <!-- ============================================ -->
-<!--                  Quiz                        -->
-<!-- ============================================ -->
+            <a href="#hero" class="nav-logo">
+                SPECI⁺
+            </a>
+        
+            <button
+                id="menu-button"
+                class="menu-button"
+                type="button"
+                aria-label="開啟導覽選單"
+                aria-expanded="false"
+                aria-controls="nav-menu"
+            >
+                <span></span>
+                <span></span>
+            </button>
+        
+            <div id="nav-menu" class="nav-menu">
+        
+                <div class="nav-menu-links">
+                    <a href="quiz.html" target="_blank">
+                        <span>01</span>
+                        開始測驗
+                        
+                    <a href="#concepts">
+                        <span>02</span>
+                        核心概念
+                    </a>
+        
+                    <a href="#works">
+                        <span>03</span>
+                        成果展示
+                    </a>
+        
+                    <a href="#team">
+                        <span>04</span>
+                        團隊介紹
+                    </a>
 
-<section id="quiz" class="quiz-section">
+                    <a href="#story">
+                        <span>05</span>
+                        展覽故事
+                    </a>
+                </div>
+        
+                <div class="nav-menu-bottom">
+                    <p>Speci⁺ 人擇空間</p>
+        
+                    <a
+                        href="https://www.instagram.com/speci_112ics/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Instagram ↗
+                    </a>
+                </div>
+        
+            </div>
+        
+        </nav>
 
-    <!-- 測驗開場 -->
-    <div id="quiz-intro" class="quiz-screen active">
-        <div class="quiz-intro-content">
-            <p class="quiz-eyebrow">SPECI⁺ 人擇空間</p>
+        <!-- ============================================
+             首頁 Hero／測驗入口
+        ============================================= -->
+    
+        <div id="quiz-intro" class="quiz-screen active">
+            <div class="quiz-intro-content">
+                <p class="quiz-eyebrow">SPECI⁺ 人擇空間</p>
+    
+                <h2 >
+                    每一次選擇，<br>
+                    都會定義你所看見的世界。
+                </h2>
+    
+                <p class="quiz-intro-text">
+                    回答問題，探索你在資訊洪流中的選擇方式。
+                </p>
+    
+                <a
+                    href="quiz.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="quiz-main-button"
+                >
+                    開始探索
+                    <span>↗</span>
+                </a>
+            </div>
+        </div>
+        
+    
+    <!-- ============================================
+     展覽故事
+============================================ -->
 
-            <h2>
+<main id="story" class="story">
+
+    <!-- 01 資訊洪流 -->
+    <section class="story-section story-information">
+
+        <div class="story-heading reveal">
+            <p class="story-number">01</p>
+
+            <div>
+                <p class="story-label">INFORMATION OVERLOAD</p>
+                <h2>資訊洪流</h2>
+            </div>
+        </div>
+
+        <div class="story-main-title reveal">
+            <h3>
                 每一次選擇，<br>
                 都會定義你所看見的世界。
-            </h2>
+            </h3>
+        </div>
 
-            <p class="quiz-intro-text">
-                回答五個問題，探索你在資訊洪流中的選擇方式。
+        <div class="information-words" aria-hidden="true">
+            <span>POST</span>
+            <span>VIDEO</span>
+            <span>ANSWER</span>
+            <span>SCROLL</span>
+            <span>VIEW</span>
+            <span>IGNORE</span>
+            <span>SELECT</span>
+            <span>LEAVE</span>
+        </div>
+
+        <div class="story-body story-body-right reveal">
+            <p>
+                我們每天都被大量資訊包圍。一則貼文、一段影像、
+                一個被推送的答案，都可能在短短幾秒內進入我們的視線。
             </p>
 
-            <button id="start-quiz" class="quiz-main-button">
-                開始探索
-                <span>↗</span>
-            </button>
+            <p>
+                我們不斷觀看、滑動、停留，也不斷忽略、篩選與離開。
+                在看似無限的資訊之中，我們所留下的每一個內容，
+                其實都反映了自己的理解、偏好與價值判斷。
+            </p>
         </div>
-    </div>
 
-    <!-- 題目頁 -->
-    <div id="quiz-question-screen" class="quiz-screen">
-        <div class="quiz-question-wrapper">
+        <blockquote class="story-quote reveal">
+            你選擇看見什麼，<br>
+            也正在決定你如何理解這個世界。
+        </blockquote>
 
-            <div class="quiz-progress-area">
-                <p id="question-number">QUESTION 01 / 05</p>
+    </section>
 
-                <div class="quiz-progress-track">
-                    <div id="quiz-progress-bar"></div>
-                </div>
-            </div>
 
-            <div id="question-content" class="question-content">
-                <h2 id="question-text"></h2>
-                <div id="answer-list" class="answer-list"></div>
-            </div>
+    <!-- 02 AI 大量生成 -->
+    <section class="story-section story-ai">
 
-        </div>
-    </div>
+        <div class="story-heading reveal">
+            <p class="story-number">02</p>
 
-    <!-- 分析中 -->
-    <div id="quiz-loading" class="quiz-screen">
-        <div class="quiz-loading-content">
-            <p>SPECI⁺ SELECTION SYSTEM</p>
-
-            <h2>
-                正在分析<br>
-                你的選擇
-            </h2>
-
-            <div class="loading-dots" aria-hidden="true">
-                <span></span>
-                <span></span>
-                <span></span>
+            <div>
+                <p class="story-label">GENERATIVE AI</p>
+                <h2>AI 大量生成</h2>
             </div>
         </div>
-    </div>
 
-    <!-- 結果頁 -->
-    <div id="quiz-result" class="quiz-screen">
-        <div class="result-wrapper">
+        <div class="ai-generation-wall" aria-hidden="true">
+            <span>TEXT</span>
+            <span>IMAGE</span>
+            <span>AUDIO</span>
+            <span>VIDEO</span>
+            <span>ANSWER</span>
+            <span>PROMPT</span>
+            <span>GENERATE</span>
+            <span>REPEAT</span>
+            <span>CREATE</span>
+            <span>OPTION</span>
+            <span>CONTENT</span>
+            <span>INFORMATION</span>
+        </div>
 
-            <div class="result-heading">
-                <p>YOUR SELECTION TYPE IS</p>
-                <h2 id="result-name">觀察者</h2>
-                <span id="result-english">OBSERVER</span>
+        <div class="story-main-title story-main-title-center reveal">
+            <h3>
+                當所有內容都能被快速生成，<br>
+                什麼才真正值得被留下？
+            </h3>
+        </div>
+
+        <div class="story-body reveal">
+            <p>
+                生成式 AI 的出現，讓文字、影像、聲音與各種內容，
+                都能以前所未有的速度被創造。
+            </p>
+
+            <p>
+                當產出變得快速且大量，創作本身不再稀缺。
+                我們面對的問題也不再只是「能不能做出來」，
+                而是「我們為什麼選擇這一個？」
+            </p>
+        </div>
+
+        <div class="ai-answer reveal">
+            <p>AI 可以提供無數種答案</p>
+            <p class="ai-answer-highlight">卻無法替人決定哪一個真正重要。</p>
+        </div>
+
+        <blockquote class="story-quote reveal">
+            真正賦予內容價值的，<br>
+            仍然是人的觀察、判斷、篩選與詮釋。
+        </blockquote>
+
+    </section>
+
+
+    <!-- 03 Speci+ -->
+    <section class="story-section story-speci">
+
+        <div class="story-heading reveal">
+            <p class="story-number">03</p>
+
+            <div>
+                <p class="story-label">THE MEANING OF SPECI⁺</p>
+                <h2>Speci⁺ 的意義</h2>
+            </div>
+        </div>
+
+        <div class="speci-layout">
+
+            <div class="speci-sticky">
+                <h3>Speci⁺</h3>
             </div>
 
-            <div class="result-card">
-                <img
-                    id="result-image"
-                    src="images/test01.png"
-                    alt="Speci+ 測驗結果分析圖"
-                >
+            <div class="speci-definitions">
+
+                <article class="definition-card reveal">
+                    <p class="definition-letter">SPECIMEN</p>
+                    <h4>樣本</h4>
+
+                    <p>
+                        象徵從大量資訊與可能性之中，
+                        被挑選、保存並展示的內容。
+                    </p>
+                </article>
+
+                <article class="definition-card reveal">
+                    <p class="definition-letter">SPECIAL</p>
+                    <h4>獨特</h4>
+
+                    <p>
+                        代表每一件作品都承載著創作者不同的觀點、
+                        判斷與價值選擇。
+                    </p>
+                </article>
+
+                <article class="definition-card definition-plus reveal">
+                    <p class="definition-letter">PLUS</p>
+                    <h4>⁺</h4>
+
+                    <p>
+                        象徵在 AI 協作與跨領域整合之後，
+                        作品持續產生的加值與延伸可能。
+                    </p>
+                </article>
+
             </div>
 
-            <p id="result-summary" class="result-summary"></p>
+        </div>
 
-            <div class="result-actions">
-                <a href="#works" class="quiz-main-button">
-                    前往成果展示
-                    <span>↘</span>
-                </a>
+        <blockquote class="story-quote reveal">
+            每一件被留下的作品，<br>
+            都是一份經過選擇的獨特樣本。
+        </blockquote>
 
-                <button id="restart-quiz" class="quiz-secondary-button">
-                    重新測驗
+    </section>
+
+
+    <section id="concepts" class="story-section story-concepts">
+
+        <div class="story-heading reveal">
+            <p class="story-number">04</p>
+    
+            <div>
+                <p class="story-label">SIX CORE CONCEPTS</p>
+                <h2>六個核心概念</h2>
+            </div>
+        </div>
+    
+        <div class="story-main-title reveal">
+            <h3>
+                Speci⁺ 不只是一個名稱，<br>
+                也是理解作品的六種方式。
+            </h3>
+        </div>
+    
+        <div class="concept-accordion">
+    
+            <article class="concept-item">
+    
+                <button class="concept-toggle" type="button">
+                    <span class="concept-letter">S</span>
+    
+                    <span class="concept-heading">
+                        <strong>Specimens / Special</strong>
+                        <small>樣本與獨特</small>
+                    </span>
+    
+                    <span class="concept-plus">＋</span>
                 </button>
+    
+                <div class="concept-content">
+                    <p>
+                        每一件作品，都是創作者經過選擇後留下的獨特樣本。
+                    </p>
+                </div>
+    
+            </article>
+    
+            <article class="concept-item">
+    
+                <button class="concept-toggle" type="button">
+                    <span class="concept-letter">P</span>
+    
+                    <span class="concept-heading">
+                        <strong>Perspective</strong>
+                        <small>觀點</small>
+                    </span>
+    
+                    <span class="concept-plus">＋</span>
+                </button>
+    
+                <div class="concept-content">
+                    <p>
+                        從大量資訊中建立自己的理解、立場與判斷。
+                    </p>
+                </div>
+    
+            </article>
+    
+            <article class="concept-item">
+    
+                <button class="concept-toggle" type="button">
+                    <span class="concept-letter">E</span>
+    
+                    <span class="concept-heading">
+                        <strong>Expression</strong>
+                        <small>表達</small>
+                    </span>
+    
+                    <span class="concept-plus">＋</span>
+                </button>
+    
+                <div class="concept-content">
+                    <p>
+                        透過影像、文字、設計、網站與數位媒介，
+                        將想法轉化為可以被看見的形式。
+                    </p>
+                </div>
+    
+            </article>
+    
+            <article class="concept-item">
+    
+                <button class="concept-toggle" type="button">
+                    <span class="concept-letter">C</span>
+    
+                    <span class="concept-heading">
+                        <strong>Curation</strong>
+                        <small>策展</small>
+                    </span>
+    
+                    <span class="concept-plus">＋</span>
+                </button>
+    
+                <div class="concept-content">
+                    <p>
+                        對資訊進行整理、篩選、編排與加值，
+                        建立內容之間的關係。
+                    </p>
+                </div>
+    
+            </article>
+    
+            <article class="concept-item">
+    
+                <button class="concept-toggle" type="button">
+                    <span class="concept-letter">I</span>
+    
+                    <span class="concept-heading">
+                        <strong>Interaction</strong>
+                        <small>互動</small>
+                    </span>
+    
+                    <span class="concept-plus">＋</span>
+                </button>
+    
+                <div class="concept-content">
+                    <p>
+                        讓作品不只是單向呈現，而是與觀眾產生交流與連結。
+                    </p>
+                </div>
+    
+            </article>
+    
+            <article class="concept-item">
+    
+                <button class="concept-toggle" type="button">
+                    <span class="concept-letter">⁺</span>
+    
+                    <span class="concept-heading">
+                        <strong>Plus</strong>
+                        <small>加值</small>
+                    </span>
+    
+                    <span class="concept-plus">＋</span>
+                </button>
+    
+                <div class="concept-content">
+                    <p>
+                        象徵 AI 協作、跨域整合與數位創新所帶來的延伸可能。
+                    </p>
+                </div>
+    
+            </article>
+    
+        </div>
+    
+    </section>
+
+
+    <!-- 05 人擇空間 -->
+    <section class="story-section story-space">
+
+        <div class="story-heading reveal">
+            <p class="story-number">05</p>
+
+            <div>
+                <p class="story-label">A HUMAN-CURATED SPACE</p>
+                <h2>人擇空間</h2>
+            </div>
+        </div>
+
+        <div class="story-main-title story-main-title-center reveal">
+            <h3>
+                空間不只是容納作品的地方，<br>
+                也是由人的選擇所建構的資訊系統。
+            </h3>
+        </div>
+
+        <div class="project-orbit reveal" aria-label="十三組專題作品">
+
+            <div class="orbit-center">
+                <span>Speci⁺</span>
+                <small>人擇空間</small>
             </div>
 
+            <span class="project-dot dot-1">01</span>
+            <span class="project-dot dot-2">02</span>
+            <span class="project-dot dot-3">03</span>
+            <span class="project-dot dot-4">04</span>
+            <span class="project-dot dot-5">05</span>
+            <span class="project-dot dot-6">06</span>
+            <span class="project-dot dot-7">07</span>
+            <span class="project-dot dot-8">08</span>
+            <span class="project-dot dot-9">09</span>
+            <span class="project-dot dot-10">10</span>
+            <span class="project-dot dot-11">11</span>
+            <span class="project-dot dot-12">12</span>
+            <span class="project-dot dot-13">13</span>
+
         </div>
-    </div>
 
-</section>
-
-    <section id="hero">
-        <h1>SPECI+</h1>
-        <p>人擇空間</p>    
-    </section>
-    <section id="about">
-        <div class="bg-slider"></div>
-
-        <div class="overlay"></div>
-
-        <div class="about-content">
-
-        <p class="small-title">
-            ABOUT THE EXHIBITION
-        </p>
-    
-        <h2>
-            在 AI 與資訊高速生成的時代，<br>
-            人如何透過「選擇」<br>
-            賦予作品真正的價值？
-        </h2>
-    
-    </section>
-    <section class="about-grid">
-
-        <div class="speci-title">
-            Speci⁺
-        </div>
-    
-        <div class="right">
+        <div class="story-body story-body-center reveal">
             <p>
-                「Speci⁺」取自 Specimen（樣本）與 Special（特別）之意，
-                象徵每一件作品皆如同被保留下來的標本，
-                承載著創作者的觀察、思考與價值判斷。
+                《人擇空間》代表一個由「人」主導的創作與觀看場域。
+                展覽集結十三組不同形式的專題作品，內容涵蓋 AI 模型、
+                APP、網站、影音、互動平台、數位服務與行銷企劃。
             </p>
-    
+
             <p>
-                當生成不再稀缺，
-                真正珍貴的，
-                將是人如何從龐大的資訊中做出選擇。
+                這些作品的形式與議題各不相同，但每一組都經歷了
+                觀察問題、整理資訊、理解需求、做出判斷，
+                最後選擇一種方式呈現的過程。
             </p>
         </div>
-    
+
+        <blockquote class="story-quote story-final-quote reveal">
+            這裡展示的不只是<br>
+            「我們做出了什麼」，<br>
+            更希望讓觀眾看見：<br>
+            <strong>我們為什麼選擇這樣做。</strong>
+        </blockquote>
+
+        <a href="#works" class="story-next-button reveal">
+            <span>開始探索作品</span>
+            <span>↘</span>
+        </a>
+
     </section>
-    <section class="ending-text">
+    <section id="works" class="works-section">
 
-        <h2>
-            人類真正的獨特性，<br>
-            或許不再只是「做出什麼」，<br>
-            而是「為何選擇這樣呈現」。
-        </h2>
+        <div class="works-heading reveal">
+            <p>PROJECTS / 13 GROUPS</p>
     
-    </section>
-    <section id="team">
-
-        <h2>TEAM</h2>
+            <h2>
+                成果展示
+            </h2>
     
-        <div class="team-grid">
+            <span>向左滑動探索作品 →</span>
+        </div>
     
-            <div class="member">
-                <img src="images/team1.jpg">
-                <h3>林裕程</h3>
-                <p>Front-End Developer</p>
-            </div>
+        <div class="works-slider">
     
-            <div class="member">
-                <img src="images/team2.jpg">
-                <h3>組員A</h3>
-                <p>UI/UX Designer</p>
-            </div>
-
-            <div class="member">
-                <img src="images/team2.jpg">
-                <h3>組員A</h3>
-                <p>UI/UX Designer</p>
-            </div>
-
-            <div class="member">
-                <img src="images/team2.jpg">
-                <h3>組員A</h3>
-                <p>UI/UX Designer</p>
-            </div>
-
-            <div class="member">
-                <img src="images/team2.jpg">
-                <h3>組員A</h3>
-                <p>UI/UX Designer</p>
-            </div>
-
-            <div class="member">
-                <img src="images/team2.jpg">
-                <h3>組員A</h3>
-                <p>UI/UX Designer</p>
-            </div>
-
-            <div class="member">
-                <img src="images/team2.jpg">
-                <h3>組員A</h3>
-                <p>UI/UX Designer</p>
-            </div>
-
+            <article class="work-card">
+                <div class="work-image">
+                    <img
+                        src="images/works/work1.jpg"
+                        alt="第一組作品"
+                    >
     
-            <!-- 繼續放7位 -->
+                    <span class="work-number">01</span>
+                </div>
+    
+                <div class="work-content">
+                    <p>GROUP 01</p>
+                    <h3>第一組作品名稱</h3>
+                    <span>AI・互動・數位內容</span>
+                    <a href="#">查看作品 ↗</a>
+                </div>
+            </article>
+    
+            <article class="work-card">
+                <div class="work-image">
+                    <img
+                        src="images/works/work2.jpg"
+                        alt="第二組作品"
+                    >
+    
+                    <span class="work-number">02</span>
+                </div>
+    
+                <div class="work-content">
+                    <p>GROUP 02</p>
+                    <h3>第二組作品名稱</h3>
+                    <span>網站・設計・資訊整合</span>
+                    <a href="#">查看作品 ↗</a>
+                </div>
+            </article>
+    
+            <article class="work-card">
+                <div class="work-image">
+                    <img
+                        src="images/works/work3.jpg"
+                        alt="第三組作品"
+                    >
+    
+                    <span class="work-number">03</span>
+                </div>
+    
+                <div class="work-content">
+                    <p>GROUP 03</p>
+                    <h3>第三組作品名稱</h3>
+                    <span>影像・行銷・企劃</span>
+                    <a href="#">查看作品 ↗</a>
+                </div>
+            </article>
+    
+            <!-- 依照同樣格式繼續增加到第 13 組 -->
     
         </div>
     
+        <div class="works-progress" aria-hidden="true">
+            <div id="works-progress-bar"></div>
+        </div>
+    
     </section>
+
+</main>
+        <!-- ============================================
+             團隊
+        ============================================= -->
     
-     
+        <section id="team">
+    
+            <h2>TEAM</h2>
+    
+            <div class="member-card">
 
-    <footer>
-
-        <div class="footer-top">
-
-            <div class="footer-logo">
-                <a href="#hero">
-                    <img src="images/speci.png"
-                         alt="Speci+ 主視覺"
-                         class="footer-main-visual">
-                </a>
-            </div>
+                <button class="member-toggle" type="button">
             
-            <div class="footer-social">
-    
-                <a href="https://www.instagram.com/speci_112ics/?utm_source=ig_web_button_share_sheet" target="_blank">
-                    <i class="fa-brands fa-instagram"></i>
-                </a>
-    
-                <a href="https://threads.net" target="_blank">
-                    <i class="fa-brands fa-threads"></i>
-                </a>
-    
-                <a href="mailto:yourmail@gmail.com">
-                    <i class="fa-regular fa-envelope"></i>
-                </a>
-    
-            </div>
-    
-        </div>
-    
-        <hr>
-    
-        <div class="footer-bottom">
-    
-            <p>
-                世新大學112級資訊傳播學系《Speci⁺ 人擇空間》
-            </p>
-    
-            <div class="footer-school">
-
-                <a href="https://www.shu.edu.tw" target="_blank">
-                    <img src="images/shu.png">
-                </a>
+                    <img src="images/team1.jpg" alt="林裕程">
             
-                <a href="https://ics.wp.shu.edu.tw" target="_blank">
-                    <img src="images/ics.png">
-                </a>
+                    <span class="member-basic">
+                        <strong>林裕程</strong>
+                        <small>Front-End Developer</small>
+                    </span>
+            
+                    <span class="member-open-icon">＋</span>
+            
+                </button>
+            
+                <div class="member-details">
+            
+                    <p>
+                        負責網站前端開發、RWD 響應式設計、
+                        網頁互動與測驗功能製作。
+                    </p>
+            
+                    <a href="#" aria-label="林裕程 Instagram">
+                        Instagram ↗
+                    </a>
+            
+                </div>
             
             </div>
-        </div>
+        </section>
     
-    </footer>
-
-    <script src="js/main.js"></script>
-    <script src="js/quiz.js"></script>
-
-</body>
+    
+        <!-- ============================================
+             Footer
+        ============================================= -->
+    
+        <footer>
+    
+            <div class="footer-top">
+    
+                <a href="#hero" class="footer-logo">
+                    <img
+                        src="images/speci.png"
+                        alt="Speci+ 人擇空間"
+                        class="footer-main-visual"
+                    >
+                </a>
+    
+                <div class="footer-social">
+    
+                    <a
+                        href="https://www.instagram.com/speci_112ics/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Instagram"
+                    >
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+    
+                    <a
+                        href="https://threads.net"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Threads"
+                    >
+                        <i class="fa-brands fa-threads"></i>
+                    </a>
+    
+                    <a
+                        href="mailto:yourmail@gmail.com"
+                        aria-label="Email"
+                    >
+                        <i class="fa-regular fa-envelope"></i>
+                    </a>
+    
+                </div>
+    
+            </div>
+    
+            <hr>
+    
+            <div class="footer-bottom">
+    
+                <p>
+                    世新大學112級資訊傳播學系《Speci⁺ 人擇空間》
+                </p>
+    
+                <div class="footer-school">
+    
+                    <a
+                        href="https://www.shu.edu.tw"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <img src="images/shu.png" alt="世新大學">
+                    </a>
+    
+                    <a
+                        href="https://ics.wp.shu.edu.tw"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <img
+                            src="images/ics.png"
+                            alt="世新大學資訊傳播學系"
+                        >
+                    </a>
+    
+                </div>
+    
+            </div>
+    
+        </footer>
+    
+        <script src="js/main.js"></script>
+    
+    </body>
 </html>
