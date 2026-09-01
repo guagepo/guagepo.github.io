@@ -134,6 +134,66 @@ footer hr{
 
     height:110px;
 }
+
+
+/* ============================================
+   Footer RWD
+============================================ */
+
+@media(max-width:700px){
+
+    footer{
+        padding:35px 6% 25px;
+    }
+
+    .footer-top{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:26px;
+
+        margin-bottom:20px;
+    }
+
+    .footer-logo{
+        width:auto;
+        height:auto;
+    }
+
+    .footer-main-visual{
+        width:160px;
+    }
+
+    .footer-social{
+        gap:22px;
+    }
+
+    .footer-social a{
+        font-size:28px;
+    }
+
+    .footer-bottom{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:20px;
+    }
+
+    .footer-bottom p{
+        font-size:14px;
+        line-height:1.6;
+    }
+
+    .footer-school{
+        flex-wrap:wrap;
+        align-items:center;
+        gap:16px;
+    }
+
+    .footer-school img{
+        height:60px;
+    }
+
+}
+
 /* ============================================
    Team Accordion
 ============================================ */
@@ -1641,6 +1701,150 @@ body.menu-open{
 
     .works-progress{
         display:none;
+    }
+
+}
+
+
+/* ============================================
+   單一作品詳細頁 (workN.html)
+============================================ */
+
+.project-page{
+    padding:170px 6% 120px;
+
+    background:#0c0c0c;
+    color:#fff;
+}
+
+.project-back{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+
+    margin-bottom:50px;
+
+    color:#999;
+
+    font-size:14px;
+
+    transition:color .3s ease;
+}
+
+.project-back:hover{
+    color:#f7941d;
+}
+
+.project-hero{
+    display:grid;
+    gap:36px;
+
+    margin-bottom:60px;
+}
+
+.project-hero-media{
+    overflow:hidden;
+
+    width:100%;
+    max-width:280px;
+    aspect-ratio:4 / 5;
+
+    border-radius:22px;
+}
+
+.project-hero-media img{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+}
+
+.project-groupno{
+    margin-bottom:14px;
+
+    color:#f7941d;
+
+    font-size:14px;
+    letter-spacing:2px;
+}
+
+.project-hero-text h1{
+    margin-bottom:16px;
+
+    font-family:"Noto Serif TC", serif;
+    font-size:clamp(36px, 6vw, 56px);
+}
+
+.project-tagline{
+    color:#999;
+
+    font-size:16px;
+}
+
+.project-body{
+    max-width:680px;
+    margin-bottom:56px;
+}
+
+.project-body p{
+    margin-bottom:26px;
+
+    color:#ccc;
+
+    font-size:16px;
+    line-height:1.9;
+}
+
+.project-theme{
+    padding:22px 26px;
+
+    border-left:2px solid #f7941d;
+
+    background:rgba(247,148,29,.07);
+
+    color:#eee;
+}
+
+.project-links{
+    margin-bottom:70px;
+}
+
+.project-links a{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+
+    padding:16px 34px;
+
+    border:1px solid #fff;
+    border-radius:999px;
+
+    background:#fff;
+    color:#101010;
+
+    font-size:15px;
+    font-weight:700;
+
+    transition:
+        background .3s ease,
+        color .3s ease,
+        transform .3s ease;
+}
+
+.project-links a:hover{
+    background:#f7941d;
+    transform:translateY(-4px);
+}
+
+.project-back-bottom{
+    margin-bottom:0;
+}
+
+@media(min-width:800px){
+
+    .project-hero{
+        grid-template-columns:260px 1fr;
+        align-items:end;
     }
 
 }
